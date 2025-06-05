@@ -15,16 +15,10 @@
             </div>
             <div class="feed">
                 <div class="empty">
-                    <p>No moods yet</p>
+                    <p>no moods yet...</p>
                 </div>
-                <div class="note">
-                    <div class="image">
-                        <img src="beer.jpg">
-                    </div>
-                    <div class="text">
-                        <input type="text" placeholder="What's on your mind?"   spellcheck="false">
-                        <!-- Turn input -> paragraph -->
-                    </div>
+                <div id="container">
+
                 </div>
             </div>
         </div>
@@ -32,3 +26,14 @@
     <script src="main.js"></script>
 
 </html>
+
+<template id="template">
+    <div class="note">
+        <div class="image">
+            <img src="beer.jpg">
+        </div>
+        <div class="text">
+            <input type="text" placeholder="What's on your mind?"   spellcheck="false">
+        </div>
+    </div>
+</template>
