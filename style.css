@@ -2,6 +2,10 @@
     box-sizing: border-box;
     color: hotpink;
 }
+
+body {
+    min-width: 700px;
+}
 .card {
     width: 90%;
     max-width: 600px; /* sets it so the box won't stretch with the window */
@@ -37,19 +41,31 @@
     gap: 10px
 }
 
-.text input{
-    background-color: red;
-    padding: 10%;
+.text {
+    position: relative;
 }
 
-.icon {
+.text input{
+    background-color: white;
+    padding: 10%;
+    width: 160%;
+}
+
+.delete{
     opacity: 0;
     position: absolute;
     top: 0px;
     right: 0px;
 }
 
-.icon:hover{
+.submit {
+    opacity: 0;
+    position: absolute;
+    top: 7px;
+    right: -90px;
+}
+
+.delete:hover, .submit:hover{
     opacity: 100%;
 }
 
@@ -59,5 +75,12 @@
     position: absolute;
     padding: 10px;
     top: 150px;
-    right: 140px;
+    right: 200px;
+}
+
+.text p {
+    border: 1px solid hotpink;
+    padding: 10%;
+    width: 275px;
+    text-align: center;
 }

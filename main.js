@@ -1,6 +1,16 @@
+const EMPTY = 0;
 const addButton = document.querySelector('.add');
 const emptyFeed = document.querySelector('.empty');
 const noteContainer = document.getElementById('container');
+
+const noteObserver = new MutationObserver(() => {
+
+    if(noteContainer.children.length === EMPTY){
+        emptyFeed.style.display = 'block';
+    }
+    else emptyFeed.style.display = 'none';
+})
+
 
 function addNote() {
 
@@ -9,7 +19,10 @@ function addNote() {
     const noteImg = clone.getElementById('image');
     const uploadDiv = clone.querySelector('.upload-photo');
     const newImg = clone.getElementById('input-file');
-    const deleteBtn = clone.querySelector('.icon');
+    const deleteBtn = clone.querySelector('.delete');
+    const noteText = clone.getElementById('input-text');
+    const submitBtn = clone.querySelector('.submit');
+    const paragraph = document.createElement('p');
 
     // Create onclick events for clones
 
@@ -40,18 +53,37 @@ function addNote() {
 
             uploadDiv.style.display = 'none';
         }
-    
     });
+
+    // Change input field into a paragraph element
+    submitBtn.onclick = () => {
+
+        text = noteText.value;
+
+        if(text.length == EMPTY) {
+            return;
+        }
+
+        paragraph.textContent = text;
+        noteText.replaceWith(paragraph);
+
+        // Remove the submit button
+        submitBtn.style.display = 'none';
+    }
+
+    paragraph.onclick = () => {
+        submitBtn.style.display = 'block';
+        paragraph.replaceWith(noteText);
+    }
 
     // Add note to noteContainer
     noteContainer.appendChild(clone);
 };
 
 addButton.addEventListener('click', (e) => {
-    
-    // Hide the empty feed text
-    emptyFeed.style.display = 'none';
 
     // Add a new note
     addNote();
 });
+
+noteObserver.observe(noteContainer, { childList: true });

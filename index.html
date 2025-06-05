@@ -29,7 +29,7 @@
 
 <template id="template">
     <div class="note">
-        <img src="exit.png" class="icon" width="50px" height="50px">
+        <img src="exit.png" class="delete" width="50px" height="50px">
         <div class="upload-photo">
             <input type="file" accept="image/jpeg, image/png, image/jpg"    id="input-file">
         </div>
@@ -37,7 +37,8 @@
             <img src="beer.jpg" width="150px" height="150px" id="image">
         </div>
         <div class="text">
-            <input type="text" placeholder="What's on your mind?"   spellcheck="false">
+            <img src="back.png" class="submit" width="40px" height="40px">
+            <input type="text" placeholder="What's on your mind?"   spellcheck="false" id="input-text" autocomplete="off">
         </div>
     </div>
 </template>
