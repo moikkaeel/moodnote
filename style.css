@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    color: hotpink;
+}
+.card {
+    width: 90%;
+    max-width: 600px; /* sets it so the box won't stretch with the window */
+    background-color: palevioletred;
+    margin: 100px auto 0px; /* top = 100px, lr = auto, bottom = 0px */
+    border-radius: 20px;
+    padding: 40px 35px; /* top&bottom lr */
+    text-align: center;
+}
+
+.add button {
+    font-size: 40px;
+    width: 90%;
+    background-color: aliceblue;
+}
+
+.feed {
+    margin: 20px auto 0px;
+    width: 90%;
+    height: 500px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.note {
+    display: none; /* change to flex in the code */
+    border: 5px solid black;
+    padding: 10px;
+    height: 200px;
+    align-items: center;
+    gap: 10px
+}
+
+.text input{
+    background-color: blue;
+    padding: 10%;
+}
+
+img {
+    max-width: 150px;
+    max-height: 150px;
+}
