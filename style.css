@@ -1,18 +1,26 @@
+/* TO DO: add a media query so that the picture and the input box
+are positioned differently depended on the window width */
+
 * {
     box-sizing: border-box;
     color: hotpink;
 }
 
 body {
-    min-width: 700px;
+
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
 .card {
-    width: 90%;
-    max-width: 600px; /* sets it so the box won't stretch with the window */
     background-color: palevioletred;
-    margin: 100px auto 0px; /* top = 100px, lr = auto, bottom = 0px */
+    width: 75%;
+    max-width: 700px;
+    margin: 100px auto 0px;
     border-radius: 20px;
-    padding: 40px 35px; /* top&bottom lr */
+    padding: 2rem 1rem;
     text-align: center;
 }
 
@@ -23,7 +31,7 @@ body {
 }
 
 .feed {
-    margin: 20px auto 0px;
+    margin: 20px auto;
     width: 90%;
     height: 500px;
     background-color: white;
@@ -47,8 +55,8 @@ body {
 
 .text input{
     background-color: white;
-    padding: 10%;
-    width: 160%;
+    padding: 1rem 1rem;
+    display: none;
 }
 
 .delete{
