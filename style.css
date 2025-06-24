@@ -1,13 +1,10 @@
-/* TO DO: add a media query so that the picture and the input box
-are positioned differently depended on the window width */
-
 * {
     box-sizing: border-box;
     color: hotpink;
 }
 
 body {
-
+    animation: load-animation 1s ease-out;
 }
 
 img {
@@ -46,7 +43,8 @@ img {
     padding: 10px;
     height: 200px;
     align-items: center;
-    gap: 10px
+    justify-content: space-around;
+    gap: 5px
 }
 
 .text {
@@ -56,7 +54,13 @@ img {
 .text input{
     background-color: white;
     padding: 1rem 1rem;
-    display: none;
+}
+
+.text p {
+    border: 1px solid hotpink;
+    padding: 10%;
+    min-width: 205px;
+    text-align: center;
 }
 
 .delete{
@@ -69,8 +73,8 @@ img {
 .submit {
     opacity: 0;
     position: absolute;
-    top: 7px;
-    right: -90px;
+    top: 5px;
+    right: 5px;
 }
 
 .delete:hover, .submit:hover{
@@ -86,9 +90,13 @@ img {
     right: 200px;
 }
 
-.text p {
-    border: 1px solid hotpink;
-    padding: 10%;
-    width: 275px;
-    text-align: center;
+
+@keyframes load-animation {
+    0% {
+        opacity: 0%;
+        transform: translateY(-5%);
+    }
+    100% {
+        opacity: 100%;
+    }
 }
